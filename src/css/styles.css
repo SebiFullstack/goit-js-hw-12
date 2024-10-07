@@ -1,0 +1,111 @@
+/**
+  |============================
+  | include css partials with
+  | default @import url()
+  |============================
+*/
+/* Common styles */
+@import url('./reset.css');
+@import url('./base.css');
+@import url('./container.css');
+@import url('./animations.css');
+
+form {
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+button {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background-color: #4e75ff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  min-width: 91px;
+  height: 40px;
+}
+
+button:hover {
+  background-color: #6c8cff;
+}
+
+input {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 272px;
+  padding: 8px 16px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #808080;
+}
+
+input:hover {
+  border-color: #000;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4e75ff;
+}
+
+input:focus::placeholder {
+  color: #4e75ff;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 360px);
+  gap: 24px;
+}
+
+
+.loader {
+  display: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-top: 4px solid rgb(60, 60, 218);
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  margin-bottom: 14px;
+}
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-left: 4px solid rgb(238, 238, 10);
+  border-bottom: 4px solid transparent;
+  animation: rotation 0.5s linear infinite reverse;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.load-more{
+  margin: 0 auto;
+  display: block;
+}
+
+.is-hidden {
+  display: none;
+}
